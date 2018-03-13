@@ -10,7 +10,7 @@ namespace FurnitureFun.Models
     {
         
         public int DepartmentId { get; set; }
-        public string DepartmentName { get; set; }
+        public string DepartmentName { get; set; } // TODO Consider making this an enum
         
     };
     
