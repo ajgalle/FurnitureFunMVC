@@ -22,7 +22,7 @@ namespace FurnitureFun.Controllers
         public ActionResult Index()
         {
             var allFurniture = FurnitureRepository.GetAllFurniture();
-
+                                                   
             return View(allFurniture);
         }
 
