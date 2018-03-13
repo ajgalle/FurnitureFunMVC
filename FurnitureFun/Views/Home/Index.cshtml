@@ -1,0 +1,21 @@
+﻿@model List<FurnitureFunDAL.Models.Furniture>
+@{
+    ViewBag.Title = "Welcome to FurnitureFun";
+}
+
+<div class="jumbotron">
+    <h1>FurnitureFun</h1>
+    <p class="lead">A great place for buying furniture.</p>
+</div>
+<div class="row">
+@foreach (var item in Model)
+{
+    <div class="col-md-3">
+        <a href="/Home/Detail/@item.Id">
+            <h4> @item.Name</h4>
+            <img src="~/Images/@item.ImageFileName" alt="@item.Name" class="img-responsive" />
+        </a>
+
+    </div>    
+}
+</div>

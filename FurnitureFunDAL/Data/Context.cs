@@ -1,0 +1,28 @@
+﻿using FurnitureFunDAL.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace FurnitureFunDAL.Data
+{
+    public class Context : DbContext
+    {
+        public DbSet<Furniture> Furnitures { get; set; }
+        public DbSet<Department> Departments { get; set; }
+
+
+        public Context()
+
+        {
+            Database.SetInitializer(new DatabaseInitializer());
+        }
+    }
+}
+
+    
+
+    

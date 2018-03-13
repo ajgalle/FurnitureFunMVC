@@ -1,0 +1,22 @@
+﻿@model FurnitureFunDAL.Models.Furniture
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>@Model.Name</h2>
+
+<img src="~/Images/@Model.ImageFileName" alt="@Model.Name" />
+
+<p> @Model.Description</p>
+@if (Model.AvailableColors != null)
+{
+        <p>Available Colors: </p>
+        <ul>
+
+             @foreach (var color in Model.AvailableColors)
+             {
+                <li>@color</li>
+             }
+         </ul>
+}
