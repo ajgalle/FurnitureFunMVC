@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FurnitureFunEmployeeSide.Controllers
 {
-    public class Employee : Controller
+    public class EmployeeController : Controller
     {
         public ActionResult Index()
         {

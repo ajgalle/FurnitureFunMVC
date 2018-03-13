@@ -1,5 +1,4 @@
-﻿using FurnitureFun.Data;
-using FurnitureFunDAL.Data;
+﻿using FurnitureFun.Data;              
 using System;
 using System.Collections.Generic;
 using System.Linq;
