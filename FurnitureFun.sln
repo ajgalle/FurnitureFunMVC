@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureFun", "FurnitureFu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureFunDAL", "FurnitureFunDAL\FurnitureFunDAL.csproj", "{F94A0ACA-8709-4BC5-934E-04AB6916F27B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FurnitureFunEmployeeSide", "FurnitureFunEmployeeSide\FurnitureFunEmployeeSide.csproj", "{B26DDE53-DC0B-483E-AAA5-22B0CC10C6D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F94A0ACA-8709-4BC5-934E-04AB6916F27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F94A0ACA-8709-4BC5-934E-04AB6916F27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F94A0ACA-8709-4BC5-934E-04AB6916F27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26DDE53-DC0B-483E-AAA5-22B0CC10C6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26DDE53-DC0B-483E-AAA5-22B0CC10C6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26DDE53-DC0B-483E-AAA5-22B0CC10C6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26DDE53-DC0B-483E-AAA5-22B0CC10C6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

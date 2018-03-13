@@ -1,0 +1,29 @@
+﻿@model FurnitureFunDAL.Models.Furniture
+@{
+    ViewBag.Title = "Employee Inventory Management System";
+}
+
+<div class="jumbotron">
+    <h1>Furniture Fun Inventory Management System</h1>
+    <p class="lead">Create, Read, Update or Delete Furniture From Inventory Here</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Name, new { @class = "col-form-label" })
+        @Html.TextBoxFor(m=>m.Name, new { @class = "form-control" })
+
+        @Html.LabelFor(m => m.Price)
+        @Html.TextBoxFor(m=>m.Price,{ @class = "form-control" })
+
+        @Html.LabelFor(m => m.Description{ @class = "col-form-label" }) 
+        @Html.TextAreaFor(m => m.Description, 15,20{ @class = "form-control" })
+        @Html.LabelFor(m => m.AvailableColors{ @class = "form-control" })
+
+        @Html.LabelFor(m => m.ImageFileName)
+
+    }
+</div>
+
