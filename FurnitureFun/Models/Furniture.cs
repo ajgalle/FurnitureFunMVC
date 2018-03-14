@@ -29,7 +29,7 @@ namespace FurnitureFun.Models
 
         public bool IsInStock { get; set; }
 
-
-        public Department Department { get; set; }
+        public int DpeartmentId { get; set; }
+        public virtual Department Department { get; set; }
     }
 }
