@@ -32,7 +32,8 @@ namespace FurnitureFun.Data
                 Id = 1,
                 AvailableColors = new string[] { "white", "black" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom,
+                PostedFile = null     
             };
             var seedFurnitureBed = new Furniture()
             {
@@ -43,7 +44,8 @@ namespace FurnitureFun.Data
                 Id = 2,
                 AvailableColors = new string[] { "white", "oyster" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom ,
+                PostedFile = null
             };
             var seedFurnitureLimitedChair = new Furniture()
             {
@@ -54,7 +56,8 @@ namespace FurnitureFun.Data
                 Id = 3,
                 AvailableColors = new string[] { "white", "blue", "green" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom,
+                PostedFile = null
             };
             var seedFurnitureGrater = new Furniture()
             {
@@ -65,7 +68,8 @@ namespace FurnitureFun.Data
                 Id = 4,
                 AvailableColors = null,
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom,
+                PostedFile = null
             };
             var seedFurnitureMug = new Furniture()
             {
@@ -76,7 +80,8 @@ namespace FurnitureFun.Data
                 Id = 4,
                 AvailableColors = new string[] { "white", "blue", "black" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom ,
+                PostedFile = null
             };
             var seedFurnitureSpoon = new Furniture()
             {
@@ -87,7 +92,8 @@ namespace FurnitureFun.Data
                 Id = 5,
                 AvailableColors = null,
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Department = seedDepartmentBedroom  ,
+                PostedFile = null
             };
             context.Furnitures.Add(seedFurnitureBed);
             context.Furnitures.Add(seedFurnitureChair);

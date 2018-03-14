@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.IO;
 
 namespace FurnitureFun.Models
 {
     public class Furniture
     {
 
-     
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please enter a name for this item.")]
@@ -29,7 +30,12 @@ namespace FurnitureFun.Models
 
         public bool IsInStock { get; set; }
 
+        //Begin implementing file upload for images.
+            [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.jpeg|.gif)$", ErrorMessage = "Only Image files allowed.")]
+            public HttpPostedFileBase PostedFile { get; set; }
+        
 
-        public Department Department { get; set; }
+        public int DpeartmentId { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

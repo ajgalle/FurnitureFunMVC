@@ -8,22 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using FurnitureFun.Data;
 using FurnitureFun.Models;
-using System.IO;
-
 
 namespace FurnitureFun.Controllers
 {
-    public class FurnituresController : Controller
+    public class Furnitures2Controller : Controller
     {
         private Context db = new Context();
 
-        // GET: Furnitures
+        // GET: Furnitures2
         public ActionResult Index()
         {
             return View(db.Furnitures.ToList());
         }
 
-        // GET: Furnitures/Details/5
+        // GET: Furnitures2/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,34 +36,30 @@ namespace FurnitureFun.Controllers
             return View(furniture);
         }
 
-        // GET: Furnitures/Create
+        // GET: Furnitures2/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Furnitures/Create
+        // POST: Furnitures2/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,Price,ImageFileName,IsInStock")] Furniture furniture)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,Price,ImageFileName,IsInStock,DpeartmentId")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
                 db.Furnitures.Add(furniture);
-                //Adding file uploadhere
-
-
                 db.SaveChanges();
-               
                 return RedirectToAction("Index");
             }
 
             return View(furniture);
         }
 
-        // GET: Furnitures/Edit/5
+        // GET: Furnitures2/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,12 +74,12 @@ namespace FurnitureFun.Controllers
             return View(furniture);
         }
 
-        // POST: Furnitures/Edit/5
+        // POST: Furnitures2/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,ImageFileName,IsInStock")] Furniture furniture)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,ImageFileName,IsInStock,DpeartmentId")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +90,7 @@ namespace FurnitureFun.Controllers
             return View(furniture);
         }
 
-        // GET: Furnitures/Delete/5
+        // GET: Furnitures2/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -111,7 +105,7 @@ namespace FurnitureFun.Controllers
             return View(furniture);
         }
 
-        // POST: Furnitures/Delete/5
+        // POST: Furnitures2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
