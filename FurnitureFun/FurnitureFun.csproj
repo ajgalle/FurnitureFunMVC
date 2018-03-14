@@ -158,7 +158,6 @@
     </Compile>
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Furniture.cs" />
-    <Compile Include="Controllers\Furnitures2Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,11 +209,6 @@
     <Content Include="Views\Furnitures\Details.cshtml" />
     <Content Include="Views\Furnitures\Edit.cshtml" />
     <Content Include="Views\Furnitures\Index.cshtml" />
-    <Content Include="Views\Furnitures2\Create.cshtml" />
-    <Content Include="Views\Furnitures2\Delete.cshtml" />
-    <Content Include="Views\Furnitures2\Details.cshtml" />
-    <Content Include="Views\Furnitures2\Edit.cshtml" />
-    <Content Include="Views\Furnitures2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

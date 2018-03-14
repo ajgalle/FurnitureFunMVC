@@ -8,8 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using FurnitureFun.Data;
 using FurnitureFun.Models;
-using System.IO;
-
 
 namespace FurnitureFun.Controllers
 {
@@ -54,11 +52,7 @@ namespace FurnitureFun.Controllers
             if (ModelState.IsValid)
             {
                 db.Furnitures.Add(furniture);
-                //Adding file uploadhere
-
-
                 db.SaveChanges();
-               
                 return RedirectToAction("Index");
             }
 
