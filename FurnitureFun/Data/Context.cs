@@ -11,8 +11,8 @@ namespace FurnitureFun.Data
 {
     public class Context : DbContext
     {
-        public virtual DbSet<Furniture> Furnitures { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
+        public DbSet<Furniture> Furnitures { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
 
         public Context()
