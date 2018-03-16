@@ -1,22 +1,65 @@
-﻿@model FurnitureFun.Models.Furniture
+﻿@model FurnitureFun.ViewModels.ViewModelDetailAndOrder
 
 @{
     ViewBag.Title = "Detail";
+
 }
+<div class="row">
+    <div class="col-md-6">
 
-<h2>@Model.Name</h2>
+        <h2>@Model.Furniture.Name</h2>
 
-<img src="~/Images/@Model.ImageFileName" alt="@Model.Name" />
+        <img src="~/Images/@Model.Furniture.ImageFileName" alt="@Model.Furniture.Name" />
 
-<p> @Model.Description</p>
-@if (Model.AvailableColors != null)
-{
-        <p>Available Colors: </p>
-        <ul>
+        <p> @Model.Furniture.Description</p>
+        @if (Model.Furniture.AvailableColors != null)
+        {
+            <p>Available Colors: </p>
+            <ul>
 
-             @foreach (var color in Model.AvailableColors)
-             {
-                <li>@color</li>
-             }
-         </ul>
-}
+                @foreach (var color in Model.Furniture.AvailableColors)
+                {
+                    <li>@color</li>
+                }
+            </ul>
+        }
+    </div>
+    <div class="col-md-6">
+        <h2> Ready to buy? </h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.Order.FirstName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Order.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Order.FirstName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.LastName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Order.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Order.LastName, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.Email, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Order.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Order.Email, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.Phone, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Order.Phone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Order.Phone, "", new { @class = "text-danger" })
+            </div>
+
+            <a href="@Url.Action("Index")" class="btn btn-danger"> Back </a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+        }
+
+
+    </div>
+</div>
