@@ -31,6 +31,8 @@ namespace FurnitureFun.Models
         [Required(ErrorMessage = "Please check the box to agree")]
         public bool HasAgreed { get; set; }
 
+        public int orderedId { get; set; } 
+
         public virtual ICollection<Furniture> Furniture { get; set; }
     }
 }

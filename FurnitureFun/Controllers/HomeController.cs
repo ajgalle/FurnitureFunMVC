@@ -9,8 +9,10 @@ using FurnitureFun.ViewModels;
 
 namespace FurnitureFun.Controllers
 {
+   
     public class HomeController : Controller
     {
+        private Context _db = new Context();
 
         public HomeController()
         {
@@ -48,14 +50,22 @@ namespace FurnitureFun.Controllers
         {
             if (ModelState.IsValid)
             {
+                //TODO: Update database to include the FK Id for the furniture being bought, then display this on the customers recent orders page. 
+                viewModel.Order.orderedId = id;
 
-                TempData["message"] = "Your order was placed successfully.";
+                _db.Orders.Add(viewModel.Order);
+
+                
+               _db.SaveChanges();
+
+                TempData["message"] = "Your order was placed successfully. Check the Order tab for more information";   // TODO Add this message to the index page
+                
+
 
                 return RedirectToAction("Index");
             }
             var furniture = FurnitureRepository.GetFurniture(id);
-            //var order = new Order();
-            //ViewModelDetailAndOrder viewModel = new ViewModelDetailAndOrder();
+             
             viewModel.Furniture = furniture;
             return View(viewModel);
 
