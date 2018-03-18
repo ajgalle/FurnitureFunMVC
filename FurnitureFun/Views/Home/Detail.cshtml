@@ -27,38 +27,71 @@
     <div class="col-md-6">
         <h2> Ready to buy? </h2>
 
+
         @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary("The following errors were found:", new { @class = "alert alert-danger" })
+    {
+       
+        <div class="form-group">
+            
+            @Html.LabelFor(m => m.Order.FirstName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Order.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Order.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Order.LastName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Order.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Order.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Order.Email, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Order.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Order.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Order.Phone, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Order.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Order.Phone, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-row">
 
-            <div class="form-group">
+            <p class="text-info">Fields disabled to clarify this is a demo and no credit card information is being collected.</p>
 
-                @Html.LabelFor(m => m.Order.FirstName, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Order.FirstName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Order.FirstName, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Order.LastName, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Order.LastName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Order.LastName, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Order.Email, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Order.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Order.Email, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Order.Phone, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Order.Phone, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Order.Phone, "", new { @class = "text-danger" })
-            </div>
-
-            <a href="@Url.Action("Index")" class="btn btn-danger"> Back </a>
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-
+            <label> Credit Card Number </label> <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />
+            <label> Three Digit Security Code </label> <input type="text" size="3" disabled />
+        </div>
+        <div class="form-row mr-md-auto">
+            <label> Expiration Date </label>
+            <select>
+                <option value="0">  </option>
+                <option value="1">JAN</option>
+                <option value="2">FEB</option>
+                <option value="3">MAR</option>
+                <option value="4">APR</option>
+                <option value="5">MAY</option>
+                <option value="6">JUN</option>
+                <option value="7">JUL</option>
+                <option value="8">AUG</option>
+                <option value="9">SEP</option>
+                <option value="10">OCT</option>
+                <option value="11">NOV</option>
+                <option value="12">DEC</option>
+            </select>
+            <select>
+                <option value="0">  </option>
+                @for (int i = DateTime.Today.Year; i < DateTime.Today.Year + 15; i++)
+            {
+                <option value="@i"> @i </option>
 
         }
+            </select>
+
+        </div>
+        <a href="@Url.Action("Index")" class="btn btn-danger"> Back </a>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+}
 
 
     </div>

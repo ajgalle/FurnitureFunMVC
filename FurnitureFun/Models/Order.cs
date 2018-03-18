@@ -24,7 +24,8 @@ namespace FurnitureFun.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Please enter a valid phone number.")]
-        [Phone(ErrorMessage = "Please enter a valid phone number.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Please enter your phone number with numbers only. Do not include dashes or spaces")]
+        //[Phone(ErrorMessage = "Please enter a valid phone number.")]  <-- StackOverflow indicates this isnt working properly at the time of this publshing, replacing with a regEx
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "Please check the box to agree")]
