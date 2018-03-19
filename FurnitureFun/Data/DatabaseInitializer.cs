@@ -32,7 +32,7 @@ namespace FurnitureFun.Data
                 Id = 1,
                 AvailableColors = new string[] { "white", "black" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             var seedFurnitureBed = new Furniture()
             {
@@ -43,7 +43,7 @@ namespace FurnitureFun.Data
                 Id = 2,
                 AvailableColors = new string[] { "white", "oyster" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             var seedFurnitureLimitedChair = new Furniture()
             {
@@ -54,7 +54,7 @@ namespace FurnitureFun.Data
                 Id = 3,
                 AvailableColors = new string[] { "white", "blue", "green" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             var seedFurnitureGrater = new Furniture()
             {
@@ -65,7 +65,7 @@ namespace FurnitureFun.Data
                 Id = 4,
                 AvailableColors = null,
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             var seedFurnitureMug = new Furniture()
             {
@@ -76,7 +76,7 @@ namespace FurnitureFun.Data
                 Id = 4,
                 AvailableColors = new string[] { "white", "blue", "black" },
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             var seedFurnitureSpoon = new Furniture()
             {
@@ -87,7 +87,7 @@ namespace FurnitureFun.Data
                 Id = 5,
                 AvailableColors = null,
                 IsInStock = true,
-                Department = seedDepartmentBedroom
+                Departments = seedDepartmentBedroom
             };
             context.Furnitures.Add(seedFurnitureBed);
             context.Furnitures.Add(seedFurnitureChair);

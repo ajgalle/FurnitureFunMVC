@@ -31,6 +31,8 @@ namespace FurnitureFun.Models
 
         public int DpeartmentId { get; set; }
 
-        public virtual Department Department { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public virtual Department Departments { get; set; }
     }
 }

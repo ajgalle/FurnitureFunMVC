@@ -20,6 +20,8 @@ namespace FurnitureFun.Models
         [MaxLength(100, ErrorMessage = "Please do not exceed 100 characters.")]
         public string LastName { get; set; }
 
+
+        [Required(ErrorMessage ="Please enter your email address.")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
@@ -33,6 +35,6 @@ namespace FurnitureFun.Models
 
         public int orderedId { get; set; } 
 
-        public virtual ICollection<Furniture> Furniture { get; set; }
+        public virtual ICollection<Furniture> Furnitures { get; set; }
     }
 }

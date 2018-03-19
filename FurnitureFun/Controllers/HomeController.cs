@@ -38,7 +38,7 @@ namespace FurnitureFun.Controllers
 
             // Recall, when using nullable types(e.g., int?) must use .Value to get at the value.
             var furniture = FurnitureRepository.GetFurniture(id.Value);
-            var order = new Order();
+            //var order = new Order();
             ViewModelDetailAndOrder viewModel = new ViewModelDetailAndOrder();
             viewModel.Furniture = furniture;
             return View(viewModel);
@@ -50,15 +50,14 @@ namespace FurnitureFun.Controllers
         {
             if (ModelState.IsValid)
             {
-                //TODO: Update database to include the FK Id for the furniture being bought, then display this on the customers recent orders page. 
-                viewModel.Order.orderedId = id;
+                 viewModel.Order.orderedId = id;
 
                 _db.Orders.Add(viewModel.Order);
 
                 
                _db.SaveChanges();
 
-                TempData["message"] = "Your order was placed successfully. Check the Order tab for more information";   // TODO Add this message to the index page
+                TempData["message"] = "Your order was placed successfully. We will email you when your credit card is charged.";   // TODO Add this message to the index page
                 
 
 

@@ -7,23 +7,22 @@
 }
 <div class="row">
     <div class="col-md-6">
-
         <h2>@Model.Furniture.Name</h2>
 
         <img src="~/Images/@Model.Furniture.ImageFileName" alt="@Model.Furniture.Name" />
 
         <p> @Model.Furniture.Description</p>
         @if (Model.Furniture.AvailableColors != null)
-        {
-            <p>Available Colors: </p>
-            <ul>
+    {
+        <p>Available Colors: </p>
+        <ul>
 
-                @foreach (var color in Model.Furniture.AvailableColors)
-                {
-                    <li>@color</li>
-                }
-            </ul>
-        }
+            @foreach (var color in Model.Furniture.AvailableColors)
+        {
+            <li>@color</li>
+    }
+        </ul>
+}
     </div>
     <div class="col-md-6">
         <h2> Ready to buy? </h2>
