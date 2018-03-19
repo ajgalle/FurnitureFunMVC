@@ -29,7 +29,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 Price = 299.98,
                 ImageFileName = "smChairSet300x200.jpeg",
-                Id = 1,
+                FurnitureId = 1,
                 AvailableColors = new string[] { "white", "black" },
                 IsInStock = true,
                 Departments = seedDepartmentBedroom
@@ -40,7 +40,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 Price = 1299.98,
                 ImageFileName = "smBed300x200.jpeg",
-                Id = 2,
+                FurnitureId = 2,
                 AvailableColors = new string[] { "white", "oyster" },
                 IsInStock = true,
                 Departments = seedDepartmentBedroom
@@ -51,7 +51,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 Price = 29.98,
                 ImageFileName = "smChair300x200.jpeg",
-                Id = 3,
+                FurnitureId = 3,
                 AvailableColors = new string[] { "white", "blue", "green" },
                 IsInStock = true,
                 Departments = seedDepartmentBedroom
@@ -62,7 +62,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.",
                 Price = 9.98,
                 ImageFileName = "smGrater300x200.jpeg",
-                Id = 4,
+                FurnitureId = 4,
                 AvailableColors = null,
                 IsInStock = true,
                 Departments = seedDepartmentBedroom
@@ -73,7 +73,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.",
                 Price = 9.98,
                 ImageFileName = "smMug300x200.jpeg",
-                Id = 4,
+                FurnitureId=5,
                 AvailableColors = new string[] { "white", "blue", "black" },
                 IsInStock = true,
                 Departments = seedDepartmentBedroom
@@ -84,7 +84,7 @@ namespace FurnitureFun.Data
                 Description = "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.",
                 Price = 2.98,
                 ImageFileName = "smSpoon300x200.jpeg",
-                Id = 5,
+                FurnitureId=6,
                 AvailableColors = null,
                 IsInStock = true,
                 Departments = seedDepartmentBedroom

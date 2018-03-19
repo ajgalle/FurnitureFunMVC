@@ -9,8 +9,7 @@ namespace FurnitureFun.Models
     public class Furniture
     {
 
-     
-        public int Id { get; set; }
+        public int FurnitureId { get; set; }
 
         [Required(ErrorMessage = "Please enter a name for this item.")]
         [MaxLength(100,ErrorMessage ="Please do not exceed 100 characters.")]
@@ -31,8 +30,8 @@ namespace FurnitureFun.Models
 
         public int DpeartmentId { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
-
+        public virtual Order Orders { get; set; }
+        
         public virtual Department Departments { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace FurnitureFun.Data
         {
             using (Context context = GetContext())
             {      // Eagerly loading the Department values too so they will be available after the connection closes. 
-                return context.Furnitures.Include(f => f.Departments).OrderBy(f => f.Name).ToList();
+                return context.Furnitures.Include(f => f.Departments).Include(f=>f.Orders).OrderBy(f => f.Name).ToList();
             }
         }                  
         /// <summary>
@@ -60,7 +60,7 @@ namespace FurnitureFun.Data
         {
             using (Context context = GetContext())
             {
-                return context.Furnitures.Where(f => f.Id == furnitureId).Include(f=>f.Departments).SingleOrDefault();
+                return context.Furnitures.Include(f=>f.Departments).Include(f=>f.Orders).Where(f => f.FurnitureId == furnitureId).SingleOrDefault();
 
             }
         }

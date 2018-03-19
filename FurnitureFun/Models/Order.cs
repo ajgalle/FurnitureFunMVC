@@ -8,7 +8,8 @@ namespace FurnitureFun.Models
 {
     public class Order
     {
-        public int Id { get; set; }
+        
+        public int OrderId { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name.")]
         [Display(Name = "First Name")]
@@ -35,6 +36,6 @@ namespace FurnitureFun.Models
 
         public int orderedId { get; set; } 
 
-        public virtual ICollection<Furniture> Furnitures { get; set; }
+        public virtual Furniture Furnitures { get; set; }
     }
 }

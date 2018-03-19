@@ -39,9 +39,9 @@ namespace FurnitureFun.Controllers
             // Recall, when using nullable types(e.g., int?) must use .Value to get at the value.
             var furniture = FurnitureRepository.GetFurniture(id.Value);
             //var order = new Order();
-            ViewModelDetailAndOrder viewModel = new ViewModelDetailAndOrder();
-            viewModel.Furniture = furniture;
-            return View(viewModel);
+            //ViewModelDetailAndOrder viewModel = new ViewModelDetailAndOrder();
+            //viewModel.Furniture = furniture;
+            return View(furniture);
         }
 
         //If the form on the detail page for an item is submitted, this will trigger.

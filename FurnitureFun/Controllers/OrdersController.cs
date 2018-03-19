@@ -18,6 +18,7 @@ namespace FurnitureFun.Controllers
         // GET: Orders
         public ActionResult Index()
         {
+            
             return View(db.Orders.ToList());
         }
 
@@ -33,7 +34,6 @@ namespace FurnitureFun.Controllers
             {
                 return HttpNotFound();
             }
-            
             return View(order);
         }
 
