@@ -9,6 +9,7 @@ namespace FurnitureFun.Models
     public class Order
     {
         
+
         public int OrderId { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name.")]
@@ -34,8 +35,7 @@ namespace FurnitureFun.Models
         [Required(ErrorMessage = "Please check the box to agree")]
         public bool HasAgreed { get; set; }
 
-        public int orderedId { get; set; } 
-
-        public virtual Furniture Furnitures { get; set; }
+        // Furniture pieces can be associated with more than one order
+        public virtual Furniture Furniture { get; set; }
     }
 }

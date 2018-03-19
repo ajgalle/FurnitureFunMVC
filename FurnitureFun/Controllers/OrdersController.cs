@@ -18,7 +18,7 @@ namespace FurnitureFun.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            
+          
             return View(db.Orders.ToList());
         }
 
@@ -37,30 +37,32 @@ namespace FurnitureFun.Controllers
             return View(order);
         }
 
-        // GET: Orders/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        ////############# I disabled this for now. Customers can create an order, but admins wouldn't need to.  If things change, I'll resurrect it.
 
-        // POST: Orders/Create
+        //// GET: Orders/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+        //// POST: Orders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Phone,HasAgreed,orderedId")] Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Orders.Add(order);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Email,Phone,HasAgreed,orderedId")] Order order)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Orders.Add(order);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(order);
-        }
+        //    return View(order);
+        //}
 
         // GET: Orders/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)

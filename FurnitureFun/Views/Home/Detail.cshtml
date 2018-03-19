@@ -1,96 +1,86 @@
-﻿@model FurnitureFun.Models.Furniture
+﻿@model FurnitureFun.Models.Order
     
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Review Product and Order";
 
 }
 <div class="row">
     <div class="col-md-6">
-        <h2>@Model.Name</h2>
+        <h2>@Model.Furniture.Name</h2>
 
-        <img src="~/Images/@Model.ImageFileName" alt="@Model.Name" />
+        <img src="~/Images/@Model.Furniture.ImageFileName" alt="@Model.Furniture.Name" />
 
-        <p> @Model.Description</p>
-        @if (Model.AvailableColors != null)
-    {
-        <p>Available Colors: </p>
-        <ul>
-
-            @foreach (var color in Model.AvailableColors)
-        {
-            <li>@color</li>
-    }
-        </ul>
-}
+  
     </div>
     <div class="col-md-6">
         <h2> Ready to buy? </h2>
-                                           
-
+          
         @using (Html.BeginForm())
         {
+            
 
-            <div class="form-group">      
+        <div class="form-group">
 
-                @Html.LabelFor(m => m.Orders.FirstName, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Orders.FirstName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Orders.FirstName, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Orders.LastName, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Orders.LastName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Orders.LastName, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Orders.Email, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Orders.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Orders.Email, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Orders.Phone, new { @class = "control-label" })
-                @Html.TextBoxFor(m => m.Orders.Phone, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Orders.Phone, "", new { @class = "text-danger" })
-            </div>
-            <div class="form-row">
+            @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+        </div>
 
-                <p class="text-info">Fields disabled to clarify this is a demo and no credit card information is being collected.</p>
+        <div class="form-row">
 
-                <label> Credit Card Number </label> <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />
-                <label> Three Digit Security Code </label> <input type="text" size="3" disabled />
-            </div>
-            <div class="form-row mr-md-auto">
-                <label> Expiration Date </label>
-                <select>
-                    <option value="0">  </option>
-                    <option value="1">JAN</option>
-                    <option value="2">FEB</option>
-                    <option value="3">MAR</option>
-                    <option value="4">APR</option>
-                    <option value="5">MAY</option>
-                    <option value="6">JUN</option>
-                    <option value="7">JUL</option>
-                    <option value="8">AUG</option>
-                    <option value="9">SEP</option>
-                    <option value="10">OCT</option>
-                    <option value="11">NOV</option>
-                    <option value="12">DEC</option>
-                </select>
-                <select>
-                    <option value="0">  </option>
-                    @for (int i = DateTime.Today.Year; i < DateTime.Today.Year + 15; i++)
-                    {
-                        <option value="@i"> @i </option>
-
-                    }
-                </select>
-
-            </div>
-            <a href="@Url.Action("Index")" class="btn btn-danger"> Back </a>
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-
+            <p class="text-info">Fields disabled to clarify this is a demo and no credit card information is being collected.</p>
+            
+            <label> Credit Card Number </label> <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />
+            <label> Three Digit Security Code </label> <input type="text" size="3" disabled />
+        </div>
+        <div class="form-row mr-md-auto">
+            <label> Expiration Date </label>
+            <select>
+                <option value="0">  </option>
+                <option value="1">JAN</option>
+                <option value="2">FEB</option>
+                <option value="3">MAR</option>
+                <option value="4">APR</option>
+                <option value="5">MAY</option>
+                <option value="6">JUN</option>
+                <option value="7">JUL</option>
+                <option value="8">AUG</option>
+                <option value="9">SEP</option>
+                <option value="10">OCT</option>
+                <option value="11">NOV</option>
+                <option value="12">DEC</option>
+            </select>
+            <select>
+                <option value="0">  </option>
+                @for (int i = DateTime.Today.Year; i < DateTime.Today.Year + 15; i++)
+            {
+                <option value="@i"> @i </option>
 
         }
+            </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="@Url.Action("Index")" class="btn btn-danger"> Back </a>
+
+
+}
 
 
     </div>

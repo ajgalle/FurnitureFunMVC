@@ -1,73 +1,79 @@
-﻿using FurnitureFun.Data;
-using FurnitureFun.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FurnitureFun.ViewModels;
+using FurnitureFun.Data;
+using FurnitureFun.Models;
 
 namespace FurnitureFun.Controllers
 {
-   
     public class HomeController : Controller
     {
-        private Context _db = new Context();
+        private Context db = new Context();
 
-        public HomeController()
-        {
-
-
-
-        }
-
+        // GET: Furnitures
         public ActionResult Index()
         {
-            var allFurniture = FurnitureRepository.GetAllFurniture();
-
-            return View(allFurniture);
+        
+            return View(db.Furnitures.ToList());
         }
 
+        // GET: Furniture/Detail/5
         public ActionResult Detail(int? id)
         {
-
             if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Furniture furniture = db.Furnitures.Find(id);
+            Order order = new Order();
+            order.Furniture = furniture;
+
+            if (furniture == null)
             {
                 return HttpNotFound();
             }
-
-            // Recall, when using nullable types(e.g., int?) must use .Value to get at the value.
-            var furniture = FurnitureRepository.GetFurniture(id.Value);
-            //var order = new Order();
-            //ViewModelDetailAndOrder viewModel = new ViewModelDetailAndOrder();
-            //viewModel.Furniture = furniture;
-            return View(furniture);
+            return View(order);
         }
 
-        //If the form on the detail page for an item is submitted, this will trigger.
+        
+        // POST: Orders/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Detail(int id, ViewModelDetailAndOrder viewModel)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Detail([Bind(Include = "Id,FirstName,LastName,Email,Phone,HasAgreed")] int id, Order order)
         {
+            Furniture furniture = db.Furnitures.Find(id);
+
             if (ModelState.IsValid)
             {
-                 viewModel.Order.orderedId = id;
-
-                _db.Orders.Add(viewModel.Order);
-
-                
-               _db.SaveChanges();
-
-                TempData["message"] = "Your order was placed successfully. We will email you when your credit card is charged.";   // TODO Add this message to the index page
-                
-
-
+                order.Furniture = furniture;
+                db.Orders.Add(order);
+                db.SaveChanges();
+                TempData["message"] = "Your order has been placed.  We will email you when your credit card is charged.";
                 return RedirectToAction("Index");
             }
-            var furniture = FurnitureRepository.GetFurniture(id);
-             
-            viewModel.Furniture = furniture;
-            return View(viewModel);
+            
+            
+            order.Furniture = furniture;
 
+            return View(order);
+        }
+
+ 
+
+         protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
-   }
+}

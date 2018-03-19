@@ -12,26 +12,25 @@ namespace FurnitureFun.Models
         public int FurnitureId { get; set; }
 
         [Required(ErrorMessage = "Please enter a name for this item.")]
-        [MaxLength(100,ErrorMessage ="Please do not exceed 100 characters.")]
+        [MaxLength(100, ErrorMessage = "Please do not exceed 100 characters.")]
         public string Name { get; set; }
 
         [MaxLength(10000, ErrorMessage = "Please do not exceed 10,000 characters.")]
         public string Description { get; set; }
 
-        [Required (ErrorMessage = "Please enter a price.")]
-        [Range(1,10000000, ErrorMessage = "In order to be entered automatically in this system, the price must be less than $10,000,000.")]
+        [Required(ErrorMessage = "Please enter a price.")]
+        [Range(1, 10000000, ErrorMessage = "In order to be entered automatically in this system, the price must be less than $10,000,000.")]
         public double Price { get; set; }
 
         public string ImageFileName { get; set; }
 
-        public string[] AvailableColors { get; set; }
-
         public bool IsInStock { get; set; }
 
-        public int DpeartmentId { get; set; }
+        public string Department { get; set; }
 
-        public virtual Order Orders { get; set; }
-        
-        public virtual Department Departments { get; set; }
+       // public Order Orders { get; set; }
+
+
+
     }
 }
