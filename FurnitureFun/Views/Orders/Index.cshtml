@@ -8,44 +8,18 @@
 <p> Good morning administrator.  The following orders have been placed.  Please fulfill the order and then press "Completed" to clear it from the queue Also, you may delete the order from the database if you like. </p>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-    
-    @foreach (var item in Model)
-    {
-        if (item.IsCompleted != true) {
-        <div class="row shadowBox">
-            <div class="col-4">
-                <img src="~/Images/@item.Furniture.ImageFileName" alt="@item.Furniture.Name" class="img-responsive" />
-                <p>@item.Furniture.Name | @item.Furniture.Price</p>
-            </div>
-            
-            <div class="col-5">
-                <p> Customer Information: </p>
-                <p>
-                    @item.FirstName @item.LastName
-                </p>
-                <p>
-                    @item.Email
-                </p>
-                <p>
-                    @item.Phone
-                </p>
-                <p>
-                    @item.Street
-                </p>
-                <p>
-                    @item.StreetLine2
-                </p>
-                <p>
-                    @item.City , @item.State  @item.Zip
-                </p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 
-                @Html.ActionLink("Order Fulfilled", "Edit", new { id = item.OrderId, @class="btn btn-warning" }) |
-                @*@Html.ActionLink("Details", "Details", new { id = item.OrderId }) |*@
-                @Html.ActionLink("Delete/Cancel Order", "Delete", new { id = item.OrderId, @class = "btn btn-warning" })
-            </div>
-        </div>
-        }
-    }
+@foreach (var item in Model)
+{
+
+    <div class="row shadowBox">
+        @Html.Partial("_ViewOrder", item)
+        @Html.ActionLink("Order Fulfilled", "Edit", new { id = item.OrderId, @class = "btn btn-warning" }) |
+        @*@Html.ActionLink("Details", "Details", new { id = item.OrderId }) |*@
+        @Html.ActionLink("Delete/Cancel Order", "Delete", new { id = item.OrderId, @class = "btn btn-warning" })
+    </div>
+}
+        
 

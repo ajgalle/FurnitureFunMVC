@@ -1,0 +1,29 @@
+﻿@model FurnitureFun.Models.Order
+       
+ 
+    <div class="col-4">
+        <img src="~/Images/@Model.Furniture.ImageFileName" alt="@Model.Furniture.Name" class="img-responsive" />
+        <p>@Model.Furniture.Name | @Model.Furniture.Price</p>
+    </div>
+
+    <div class="col-5">
+        <p> Customer Information: </p>
+        <p>
+            @Model.FirstName @Model.LastName
+        </p>
+        <p>
+            @Model.Email
+        </p>
+        <p>
+            @Model.Phone
+        </p>
+        <p>
+            @Model.Street
+        </p>
+        <p>
+            @Model.StreetLine2
+        </p>
+        <p>
+            @Model.City , @Model.State  @Model.Zip
+        </p>
+</div>
