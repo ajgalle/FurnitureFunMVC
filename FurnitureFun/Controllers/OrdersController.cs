@@ -79,16 +79,15 @@ namespace FurnitureFun.Controllers
         }
 
         // POST: Orders/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Email,Phone,HasAgreed,orderedId")] Order order)
+        public ActionResult Edit(Order order)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
+                TempData["message"] = "Database updated.";
                 return RedirectToAction("Index");
             }
             return View(order);
@@ -117,6 +116,8 @@ namespace FurnitureFun.Controllers
             Order order = db.Orders.Find(id);
             db.Orders.Remove(order);
             db.SaveChanges();
+
+            TempData["message"] = "Database updated.";
             return RedirectToAction("Index");
         }
 

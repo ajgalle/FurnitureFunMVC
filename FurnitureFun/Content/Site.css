@@ -6,6 +6,8 @@
 .shadowBox {
     border:1px solid;
     box-shadow: 10px 10px 8px #808080;
+    padding:10px;
+    margin:25px;
 }
 .shadowBox:hover {
         box-shadow: 20px 10px 8px #808080;

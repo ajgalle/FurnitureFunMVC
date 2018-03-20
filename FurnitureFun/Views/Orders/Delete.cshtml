@@ -1,12 +1,13 @@
 ﻿@model FurnitureFun.Models.Order
-
+    <!-- In real life, I wouldn't likely delete the order when it is fulfilled.  Instead, I would mark IsDeleted to true to preserve the information in case it is neeeded later. 
+        However, the server I am using is free and has very limited storage at the free tier, so I'm trying to keep things small. -->
 @{
     ViewBag.Title = "Delete";
 }
 
 <h2>Order Complete</h2>
 
-<h3>Please confirm you have completed this order?</h3>
+<h3>Please confirm you have completed this order and want it removed from the database.</h3>
 <div>
     @Html.Partial("_ViewOrder", Model)
     
@@ -16,7 +17,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Confirmed Fulfilled" class="btn btn-warning" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

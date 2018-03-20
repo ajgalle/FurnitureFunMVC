@@ -4,22 +4,44 @@
     ViewBag.Title = "Pending Orders";
 }
 
+@if (TempData["message"] != null)
+{
+    <p class="alert alert-success">
+        @TempData["message"]
+    </p>
+
+}
 <h2>Orders Pending Response</h2>
-<p> Good morning administrator.  The following orders have been placed.  Please fulfill the order and then press "Completed" to clear it from the queue Also, you may delete the order from the database if you like. </p>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
-
-@foreach (var item in Model)
+<p>Welcome administrator.</p>
+  
+@if (Model.Count() ==0 )
+{
+    <p>There are no pending orders right now.</p>
+    @Html.ActionLink("Feel free to add one by placing an order on the customer site.", "Index", "Home")
+}
+else if (Model != null)
 {
 
-    <div class="row shadowBox">
-        @Html.Partial("_ViewOrder", item)
-        @Html.ActionLink("Order Fulfilled", "Edit", new { id = item.OrderId, @class = "btn btn-warning" }) |
-        @*@Html.ActionLink("Details", "Details", new { id = item.OrderId }) |*@
-        @Html.ActionLink("Delete/Cancel Order", "Delete", new { id = item.OrderId, @class = "btn btn-warning" })
-    </div>
-}
-        
 
+<p>  The following orders have been placed.</p>
+<p>  Please fulfill the order and then press "Completed" to clear it from the queue or to delete it if you need to. </p>
+<p>  Also, you may update the order too. </p>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+
+    <div class="col-sm-3 shadowBox">
+        @Html.Partial("_ViewOrder", item)
+        @Html.ActionLink("Fulfill Order", "Delete", new { id = item.OrderId }, new { @class = "btn btn-warning" }) |
+
+        @Html.ActionLink("Edit Order", "Edit", new { id = item.OrderId })
+    </div>
+
+    
+   }
+</div>
+}
+                                                                                                                   

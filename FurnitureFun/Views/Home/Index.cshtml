@@ -5,10 +5,11 @@
 }
 
 @if (TempData["message"] != null)                         
-{
-    <p class="col-md-6 alert alert-success">    
-         @TempData["message"]
+{  
+    <p class="alert alert-success" >
+        @TempData["message"]
     </p>
+
 }                                     
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -45,9 +46,10 @@
         
     @foreach (var item in Model)
     {
-        <div class="col-md-4">
+        <div class="col-sm-3 shadowBox">
             <a href="/Home/Detail/@item.FurnitureId">  
                 <h4> @item.Name </h4>
+                <p> $@item.Price</p>
                 <img src="~/Images/@item.ImageFileName" alt="@item.Name" class="img-responsive" />
             </a>
 

@@ -14,9 +14,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <div>
-            @Html.ActionLink("View the Customer Site", "Index", "Home", null, new { @class = "btn btn-block btn-success" })
-            @Html.ActionLink("View the Order Fufillment Site", "Index", "Orders", null, new { @class = "btn btn-block btn-primary" })
+
+        <div class="text-center">
+            @Html.ActionLink("View the Customer Site", "Index", "Home", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("View the Order Fufillment Site", "Index", "Orders", null, new { @class = "btn btn-primary" })
+
         </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - <a href="https://ajgalle.github.io/" target="_blank">Andrew J. Galle</a> </p>
