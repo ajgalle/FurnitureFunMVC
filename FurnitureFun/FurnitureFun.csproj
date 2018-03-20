@@ -211,9 +211,14 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\AdfulKitchen2000x1325.jpeg" />
+    <Content Include="Images\adlargeBedroom2000x1325.jpeg" />
+    <Content Include="Images\adLargeLivingRoom2000x1325.jpeg" />
+    <Content Include="Images\comingSoon.jpg" />
     <Content Include="Images\fulKitchen2000x1325.jpeg" />
     <Content Include="Images\largeBedroom2000x1325.jpeg" />
     <Content Include="Images\smBed300x200.jpeg" />
