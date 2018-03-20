@@ -14,10 +14,10 @@
     </div>
     <div class="col-md-6">
         <h2> Ready to buy? </h2>
-          
+
         @using (Html.BeginForm())
-        {
-            
+    {
+
 
         <div class="form-group">
 
@@ -40,11 +40,39 @@
             @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
         </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Street, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Street, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Street, "", new { @class = "text-danger" })
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(m => m.StreetLine2, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.StreetLine2, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.StreetLine2, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.City, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.State, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Zip, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Zip, new { @class = "form-control", type="number" })
+            @Html.ValidationMessageFor(m => m.Zip, "", new { @class = "text-danger" })
+        </div>
         <div class="form-row">
 
-            <p class="text-info">Fields disabled to clarify this is a demo and no credit card information is being collected.</p>
-            
+            <p class="text-info">Credit Card fields disabled to clarify this is a demo and no credit card information is being collected.</p>
+
             <label> Credit Card Number </label> <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />  <input type="text" size="4" disabled />
             <label> Three Digit Security Code </label> <input type="text" size="3" disabled />
         </div>

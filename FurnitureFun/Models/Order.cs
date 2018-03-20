@@ -27,13 +27,30 @@ namespace FurnitureFun.Models
         [EmailAddress(ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Please enter your street address.")]
+        public string Street { get; set; }
+
+        public string StreetLine2 { get; set; }
+
+        [Required(ErrorMessage = "Please enter your city.")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Please enter your state.")]
+        public string State { get; set; }
+
+        [Required(ErrorMessage = "Please enter your zipcode.")]
+        [MinLength(5, ErrorMessage = "Please enter your five digit zip code.")]
+        [MaxLength(5, ErrorMessage = "Please enter your five digit zip code.")]
+        
+        public string Zip { get; set; }
+
+
         [Required(ErrorMessage = "Please enter a valid phone number.")]
         [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Please enter your phone number with numbers only. Do not include dashes or spaces")]
         //[Phone(ErrorMessage = "Please enter a valid phone number.")]  <-- StackOverflow indicates this isnt working properly at the time of this publshing, replacing with a regEx
         public string Phone { get; set; }
 
-        [Required(ErrorMessage = "Please check the box to agree")]
-        public bool HasAgreed { get; set; }
+        public bool IsCompleted { get; set; }
 
         // Furniture pieces can be associated with more than one order
         public virtual Furniture Furniture { get; set; }

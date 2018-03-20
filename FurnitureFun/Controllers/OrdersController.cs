@@ -65,6 +65,7 @@ namespace FurnitureFun.Controllers
 
         public ActionResult Edit(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -107,9 +108,9 @@ namespace FurnitureFun.Controllers
             }
             return View(order);
         }
-
-        // POST: Orders/Delete/5
-        [HttpPost, ActionName("Delete")]
+     
+    // POST: Orders/Delete/5
+    [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
